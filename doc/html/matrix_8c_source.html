@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>MatricesPEC3: Fichero Fuente matrix.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="accessories-dictionary-2.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">MatricesPEC3
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Globales</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">matrix.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="matrix_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8h.html">matrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">   24</a></span>&#160;<a class="code" href="structt__matrix.html">t_matrix</a> *<a class="code" href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">Create_Empty</a>( <span class="keywordtype">int</span> dim )</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="structt__matrix.html">t_matrix</a> *aux;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (!(aux=malloc( <span class="keyword">sizeof</span>(<a class="code" href="structt__matrix.html">t_matrix</a>))))</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    aux-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a> = dim;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (!(aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a> = malloc(dim*<span class="keyword">sizeof</span>(<span class="keywordtype">float</span> *)))){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        free( aux );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span>( i=0; i &lt; dim; i++ )</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (!(aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i] = malloc(dim*<span class="keyword">sizeof</span>( <span class="keywordtype">float</span> )))){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span>( j=1; j &lt; i; j++)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                free(aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[j]);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            free(aux);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="matrix_8h.html#a902f1d07aaf387502e992d3a8b8658e9">   52</a></span>&#160;<a class="code" href="structt__matrix.html">t_matrix</a> *<a class="code" href="matrix_8c.html#a902f1d07aaf387502e992d3a8b8658e9">Create_M</a>(<span class="keywordtype">int</span> dim)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="structt__matrix.html">t_matrix</a> *aux;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    sleep( 1 );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    srandom( time( NULL ) );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> ( !(aux = <a class="code" href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">Create_Empty</a>( dim ))) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; dim-1; i++)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span> (j = 0; j &lt; dim-1; j++)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j] = 1.0*(random()%1000);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="matrix_8h.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *m)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span>( i=0; i &lt; m-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; i++ )</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        free(m-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    free( m );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="matrix_8h.html#a31f116a3a1548614bb47007fe43de80d">   88</a></span>&#160;<a class="code" href="structt__matrix.html">t_matrix</a> *<a class="code" href="matrix_8c.html#a31f116a3a1548614bb47007fe43de80d">Add_M</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *A, <a class="code" href="structt__matrix.html">t_matrix</a> *B)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="structt__matrix.html">t_matrix</a> *aux;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> ( A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a> != B-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (!(aux=<a class="code" href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">Create_Empty</a>(A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>))) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; i++)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span>(j=0; j&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; j++)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j] = A-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j] + B-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="matrix_8h.html#a852ea4ccb33c01bcd3f30550bbeb28c5">  108</a></span>&#160;<a class="code" href="structt__matrix.html">t_matrix</a> *<a class="code" href="matrix_8c.html#a852ea4ccb33c01bcd3f30550bbeb28c5">Subs_M</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *A, <a class="code" href="structt__matrix.html">t_matrix</a> *B)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="structt__matrix.html">t_matrix</a> *aux;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> ( A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a> != B-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (!(aux=<a class="code" href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">Create_Empty</a>(A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>))) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; i++)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">for</span>(j=0; j&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; j++)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j] = A-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j] - B-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j];</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="matrix_8h.html#aa58bfaa7a3a002eb763a413ae7d50cc8">  128</a></span>&#160;<a class="code" href="structt__matrix.html">t_matrix</a> *<a class="code" href="matrix_8c.html#aa58bfaa7a3a002eb763a413ae7d50cc8">Mult_M</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *A, <a class="code" href="structt__matrix.html">t_matrix</a> *B)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> i,j,k;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="structt__matrix.html">t_matrix</a> *aux;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> ( A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a> != B-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (!(aux=<a class="code" href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">Create_Empty</a>(A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>))) <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">for</span>(i=1; i&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; i++)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">for</span>(j=1; j&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; j++){</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j]=0;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordflow">for</span>( k=1; k&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; k++)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                aux-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j]+=((A-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][k])*(B-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[k][j]));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">return</span> aux;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="matrix_8h.html#ac6cc30051e2d7959f8bfc3f69f895bc9">  149</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="matrix_8c.html#ac6cc30051e2d7959f8bfc3f69f895bc9">Log_M</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *A)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">int</span> i,j;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; i++)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">for</span>(j=0; j &lt; A-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; j++)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            A-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j]=log10(A-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j]);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="matrix_8h.html#a2941470fb65a112858b43f95894f7d4f">  165</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *m, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (m){</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        printf(<span class="stringliteral">&quot;M(%d,%d) = %f\n&quot;</span>, i, j, m-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j]);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="matrix_8h.html#a37004191a7e1739fcd4712c4c5780adf">  182</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>(<a class="code" href="structt__matrix.html">t_matrix</a> *m)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">if</span> (!m) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">for</span>( i= 0; i &lt; m-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; i++){</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">for</span>( j= 0; j &lt; m-&gt;<a class="code" href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">dim</a>; j++)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            printf(<span class="stringliteral">&quot;%10.2f \t&quot;</span>, m-&gt;<a class="code" href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">m</a>[i][j]);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="ttc" id="matrix_8c_html_a2941470fb65a112858b43f95894f7d4f"><div class="ttname"><a href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a></div><div class="ttdeci">int Print_E(t_matrix *m, int i, int j)</div><div class="ttdoc">Esta función muestra por pantalla el valor del elemento i,j de la matriz pasada como parámetro...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00165">matrix.c:165</a></div></div>
+<div class="ttc" id="structt__matrix_html_a1afd668a23192446d0193e0ffffd91ba"><div class="ttname"><a href="structt__matrix.html#a1afd668a23192446d0193e0ffffd91ba">t_matrix::m</a></div><div class="ttdeci">float ** m</div><div class="ttdoc">Esta variable de tipo apuntador se utiliza para direccionar las posiciones de memoria asignada a la m...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00019">matrix.h:19</a></div></div>
+<div class="ttc" id="structt__matrix_html_a70b5e28b5bc3d1b63a7435c5fe50b837"><div class="ttname"><a href="structt__matrix.html#a70b5e28b5bc3d1b63a7435c5fe50b837">t_matrix::dim</a></div><div class="ttdeci">int dim</div><div class="ttdoc">Esta variable representa el tamaño de la matriz, entendiendo que se manejan matrices cuadradas...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00018">matrix.h:18</a></div></div>
+<div class="ttc" id="matrix_8c_html_a76f5dd1cd06c22b7f1c07f193d31b3c1"><div class="ttname"><a href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a></div><div class="ttdeci">void Eliminate_M(t_matrix *m)</div><div class="ttdoc">Esta función eliminará la matriz recibida como parámetro, liberando la memoria reservada en su creaci...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00071">matrix.c:71</a></div></div>
+<div class="ttc" id="matrix_8c_html_a31f116a3a1548614bb47007fe43de80d"><div class="ttname"><a href="matrix_8c.html#a31f116a3a1548614bb47007fe43de80d">Add_M</a></div><div class="ttdeci">t_matrix * Add_M(t_matrix *A, t_matrix *B)</div><div class="ttdoc">Esta función devuelve una nueva matriz que será el resultado de la suma de los elementos de las matri...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00088">matrix.c:88</a></div></div>
+<div class="ttc" id="matrix_8c_html_a902f1d07aaf387502e992d3a8b8658e9"><div class="ttname"><a href="matrix_8c.html#a902f1d07aaf387502e992d3a8b8658e9">Create_M</a></div><div class="ttdeci">t_matrix * Create_M(int dim)</div><div class="ttdoc">Esta función creará e inicializará, con números aleatorios reales entre 0 y 1000 , una matriz de dimensión dim x dim. </div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00052">matrix.c:52</a></div></div>
+<div class="ttc" id="matrix_8h_html"><div class="ttname"><a href="matrix_8h.html">matrix.h</a></div><div class="ttdoc">Este archivo contiene la información de las definiciones del archivo de cabecera matrix.h. </div></div>
+<div class="ttc" id="matrix_8c_html_a852ea4ccb33c01bcd3f30550bbeb28c5"><div class="ttname"><a href="matrix_8c.html#a852ea4ccb33c01bcd3f30550bbeb28c5">Subs_M</a></div><div class="ttdeci">t_matrix * Subs_M(t_matrix *A, t_matrix *B)</div><div class="ttdoc">Esta función devuelve una nueva matriz que será el resultado de la resta de los elementos de las matr...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00108">matrix.c:108</a></div></div>
+<div class="ttc" id="structt__matrix_html"><div class="ttname"><a href="structt__matrix.html">t_matrix</a></div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00017">matrix.h:17</a></div></div>
+<div class="ttc" id="matrix_8c_html_ac6cc30051e2d7959f8bfc3f69f895bc9"><div class="ttname"><a href="matrix_8c.html#ac6cc30051e2d7959f8bfc3f69f895bc9">Log_M</a></div><div class="ttdeci">void Log_M(t_matrix *A)</div><div class="ttdoc">Esta función aplica la operación logaritmo base 10 a todos los elementos de la matriz pasada como par...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00149">matrix.c:149</a></div></div>
+<div class="ttc" id="matrix_8c_html_af15683ee07b24c3e96b0542c4e6d651e"><div class="ttname"><a href="matrix_8c.html#af15683ee07b24c3e96b0542c4e6d651e">Create_Empty</a></div><div class="ttdeci">t_matrix * Create_Empty(int dim)</div><div class="ttdoc">Esta función tiene como objetivo crear un matriz cuadrada de tamaño dim, con asignación dinamica de m...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00024">matrix.c:24</a></div></div>
+<div class="ttc" id="matrix_8c_html_a37004191a7e1739fcd4712c4c5780adf"><div class="ttname"><a href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a></div><div class="ttdeci">int Print_M(t_matrix *m)</div><div class="ttdoc">Esta función muestra por pantalla todos los elementos de la matriz por filas. </div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00182">matrix.c:182</a></div></div>
+<div class="ttc" id="matrix_8c_html_aa58bfaa7a3a002eb763a413ae7d50cc8"><div class="ttname"><a href="matrix_8c.html#aa58bfaa7a3a002eb763a413ae7d50cc8">Mult_M</a></div><div class="ttdeci">t_matrix * Mult_M(t_matrix *A, t_matrix *B)</div><div class="ttdoc">Esta función devuelve una nueva matriz que será el resultado de multiplicar las matrices pasadas como...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00128">matrix.c:128</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 11 de Diciembre de 2014 22:28:14 para MatricesPEC3 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

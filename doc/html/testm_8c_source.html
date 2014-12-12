@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>MatricesPEC3: Fichero Fuente testm.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="accessories-dictionary-2.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">MatricesPEC3
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&#160;de&#160;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Globales</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Estructuras de Datos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">testm.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="testm_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8h.html">matrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="testm_8c.html#acdef7a1fd863a6d3770c1268cb06add3">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="testm_8c.html#acdef7a1fd863a6d3770c1268cb06add3">main</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="structt__matrix.html">t_matrix</a> *A, *B, *C, *D, *E;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    A = <a class="code" href="matrix_8c.html#a902f1d07aaf387502e992d3a8b8658e9">Create_M</a>(5);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    B = <a class="code" href="matrix_8c.html#a902f1d07aaf387502e992d3a8b8658e9">Create_M</a>(5);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>(A); <a class="code" href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a>(A,3,3);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>(B); </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    C = <a class="code" href="matrix_8c.html#a31f116a3a1548614bb47007fe43de80d">Add_M</a>( A, B );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    D = <a class="code" href="matrix_8c.html#a852ea4ccb33c01bcd3f30550bbeb28c5">Subs_M</a>( A, B );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    E = <a class="code" href="matrix_8c.html#aa58bfaa7a3a002eb763a413ae7d50cc8">Mult_M</a>( A, B );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="matrix_8c.html#ac6cc30051e2d7959f8bfc3f69f895bc9">Log_M</a>(A);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>( A ); <a class="code" href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a>(A,3,3);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>( C ); <a class="code" href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a>(C,3,3);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>( D ); <a class="code" href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a>(D,3,3);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a>( E ); <a class="code" href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a>(E,3,3);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a>(A);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a>(B);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a>(C);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a>(D);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a>(E);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="ttc" id="matrix_8c_html_a2941470fb65a112858b43f95894f7d4f"><div class="ttname"><a href="matrix_8c.html#a2941470fb65a112858b43f95894f7d4f">Print_E</a></div><div class="ttdeci">int Print_E(t_matrix *m, int i, int j)</div><div class="ttdoc">Esta función muestra por pantalla el valor del elemento i,j de la matriz pasada como parámetro...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00165">matrix.c:165</a></div></div>
+<div class="ttc" id="matrix_8c_html_a76f5dd1cd06c22b7f1c07f193d31b3c1"><div class="ttname"><a href="matrix_8c.html#a76f5dd1cd06c22b7f1c07f193d31b3c1">Eliminate_M</a></div><div class="ttdeci">void Eliminate_M(t_matrix *m)</div><div class="ttdoc">Esta función eliminará la matriz recibida como parámetro, liberando la memoria reservada en su creaci...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00071">matrix.c:71</a></div></div>
+<div class="ttc" id="matrix_8c_html_a31f116a3a1548614bb47007fe43de80d"><div class="ttname"><a href="matrix_8c.html#a31f116a3a1548614bb47007fe43de80d">Add_M</a></div><div class="ttdeci">t_matrix * Add_M(t_matrix *A, t_matrix *B)</div><div class="ttdoc">Esta función devuelve una nueva matriz que será el resultado de la suma de los elementos de las matri...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00088">matrix.c:88</a></div></div>
+<div class="ttc" id="matrix_8c_html_a902f1d07aaf387502e992d3a8b8658e9"><div class="ttname"><a href="matrix_8c.html#a902f1d07aaf387502e992d3a8b8658e9">Create_M</a></div><div class="ttdeci">t_matrix * Create_M(int dim)</div><div class="ttdoc">Esta función creará e inicializará, con números aleatorios reales entre 0 y 1000 , una matriz de dimensión dim x dim. </div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00052">matrix.c:52</a></div></div>
+<div class="ttc" id="matrix_8h_html"><div class="ttname"><a href="matrix_8h.html">matrix.h</a></div><div class="ttdoc">Este archivo contiene la información de las definiciones del archivo de cabecera matrix.h. </div></div>
+<div class="ttc" id="testm_8c_html_acdef7a1fd863a6d3770c1268cb06add3"><div class="ttname"><a href="testm_8c.html#acdef7a1fd863a6d3770c1268cb06add3">main</a></div><div class="ttdeci">void main()</div><div class="ttdef"><b>Definition:</b> <a href="testm_8c_source.html#l00040">testm.c:40</a></div></div>
+<div class="ttc" id="matrix_8c_html_a852ea4ccb33c01bcd3f30550bbeb28c5"><div class="ttname"><a href="matrix_8c.html#a852ea4ccb33c01bcd3f30550bbeb28c5">Subs_M</a></div><div class="ttdeci">t_matrix * Subs_M(t_matrix *A, t_matrix *B)</div><div class="ttdoc">Esta función devuelve una nueva matriz que será el resultado de la resta de los elementos de las matr...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00108">matrix.c:108</a></div></div>
+<div class="ttc" id="structt__matrix_html"><div class="ttname"><a href="structt__matrix.html">t_matrix</a></div><div class="ttdef"><b>Definition:</b> <a href="matrix_8h_source.html#l00017">matrix.h:17</a></div></div>
+<div class="ttc" id="matrix_8c_html_ac6cc30051e2d7959f8bfc3f69f895bc9"><div class="ttname"><a href="matrix_8c.html#ac6cc30051e2d7959f8bfc3f69f895bc9">Log_M</a></div><div class="ttdeci">void Log_M(t_matrix *A)</div><div class="ttdoc">Esta función aplica la operación logaritmo base 10 a todos los elementos de la matriz pasada como par...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00149">matrix.c:149</a></div></div>
+<div class="ttc" id="matrix_8c_html_a37004191a7e1739fcd4712c4c5780adf"><div class="ttname"><a href="matrix_8c.html#a37004191a7e1739fcd4712c4c5780adf">Print_M</a></div><div class="ttdeci">int Print_M(t_matrix *m)</div><div class="ttdoc">Esta función muestra por pantalla todos los elementos de la matriz por filas. </div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00182">matrix.c:182</a></div></div>
+<div class="ttc" id="matrix_8c_html_aa58bfaa7a3a002eb763a413ae7d50cc8"><div class="ttname"><a href="matrix_8c.html#aa58bfaa7a3a002eb763a413ae7d50cc8">Mult_M</a></div><div class="ttdeci">t_matrix * Mult_M(t_matrix *A, t_matrix *B)</div><div class="ttdoc">Esta función devuelve una nueva matriz que será el resultado de multiplicar las matrices pasadas como...</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8c_source.html#l00128">matrix.c:128</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 11 de Diciembre de 2014 22:28:14 para MatricesPEC3 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>
